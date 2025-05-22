@@ -3,9 +3,12 @@ from docx.shared import Inches, Pt
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 
+path_to_brasao = 'assets/brasaooficialcolorido.png'
+
+
 class Cover:
-    def __init__(self, doc = Document()):
-       self.doc = doc
+    def __init__(self, doc = None):
+       self.doc = doc or Document()
     
     def run(self):
         self.header()
@@ -17,7 +20,7 @@ class Cover:
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
         p.paragraph_format.space_after = Pt(0)
         r = p.add_run()
-        r.add_picture('assets/brasaooficialcolorido.png', width=Inches(1.25))
+        r.add_picture(path_to_brasao, width=Inches(1.25))
         p = self.doc.add_paragraph()
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
         p.paragraph_format.space_before = Pt(0)

@@ -15,7 +15,7 @@ class App(QObject):
     def engine(self):
         doc = Document()
         self._loop(doc)
-        doc.save('demo.docx')    
+        doc.save('ppc.docx')    
 
     def _loop(self, doc):
         for c in __sequency__.components:
